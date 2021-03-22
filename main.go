@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"aimerneige.com/GinTest/route"
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	fmt.Println("Hello World!")
+	r := gin.Default()
+
+	route.RouteCollect(r)
+
+	panic(r.Run(":8080"))
 }
